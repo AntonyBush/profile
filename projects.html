@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <li><a href="#" style="margin-right: 70%; font-weight:bold;font-size:x-large;color: rgb(46, 44, 44);background: linear-gradient(132deg, rgb(255, 206, 236) 0.00%, rgb(151, 150, 240) 100.00%);">Portfolio</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Material</a></li>
+    </header>
+    <div class="content-wrapperr">
+        <div class="cards" style="margin-top: 40px;">
+            <div class="proj-title">MedEbook</div>
+            <div class="description">A Web application which collects User’s medical data and provides suggestions 
+                based on the analysis of the data.</div>
+        </div>
+        <div class="content">
+            <div class="clip">
+                <video id='vid1'  onclick="playpause()" muted >
+                    <source src="clips/medebook.mp4" type="video/mp4">
+                </video>
+                <div class="links"><a href="#">GitHub</a></div>
+               
+            </div>
+        </div>
+        <div class="cards">
+            <div class="proj-title">ToDoList</div>
+            <div class="description">A Web Application to add tasks with features including to add deadline, sorted by latest tasks and much more. </div>
+        </div>
+        <div class="content">
+            <div class="clip">
+                <video id='vid1'  onclick="playpause()" muted >
+                    <source src="clips/medebook.mp4" type="video/mp4">
+                </video>
+                <div class="links"><a href="#" style="margin-right: 30px;">WebSite</a><a href="#">GitHub</a></div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="proj-title">World_Clock</div>
+            <div class="description">A Java Program with GUI which displays time of various countries using multithreading.</div>
+        </div>
+        <div class="content">
+            <div class="clip">
+                <video id='vid1'  onclick="playpause()" muted >
+                    <source src="clips/medebook.mp4" type="video/mp4">
+                </video>
+                <div class="links"><a href="#">GitHub</a></div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="proj-title">Banking_System</div>
+            <div class="description">Site where money can be transferred between customers, also able to create account for customers</div>
+        </div>
+        <div class="content">
+            <div class="clip">
+                <video id='vid1'  onclick="playpause()" muted >
+                    <source src="clips/medebook.mp4" type="video/mp4">
+                </video>
+                <div class="links"><a href="#" style="margin-right: 30px;">WebSite</a><a href="#">GitHub</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let card = document.getElementsByClassName('cards');
+    var i;
+    for(i=0;i<card.length;i++){
+        card[i].style.marginBottom = "20px";
+        card[i].addEventListener("click",function(){
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight)
+            {
+                content.style.maxHeight = null;
+                this.style.borderRadius = "10px";
+            } 
+            else{
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.marginBottom = "20px";
+                content.style.marginTop = "-20px";
+                this.style.borderRadius = "10px 10px 0px 0px";
+
+            }
+        })
+    }
+    var vid = document.getElementById('vid1')
+    function playpause(){
+        if (vid.paused) 
+            vid.play(); 
+        else 
+            vid.pause(); 
+    }
+</script>
+</html>
